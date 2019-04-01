@@ -10,17 +10,21 @@ localReadConfig = readConfig.ReadConfig()
 class ConfigHttp():
 
     def __init__(self):
-        global scheme, host
+        global scheme, host, timeout
         scheme = localReadConfig.get_http("scheme")
         host = localReadConfig.get_http("baseurl")
+        timeout = localReadConfig.get_http("timeout")
+        self.log = Log.get_log()
+        self.logger = self.log.get_logger()
+        self.params = {}
         self.headers = None
         self.data = {}
         self.url = None
-        self.log = Log.get_log()
-        self.logger = self.log.get_logger()
+
 
     def set_url(self, url):
         self.url = scheme +'://'+host+url
+
 
     def set_headers(self):
         """
@@ -30,6 +34,14 @@ class ConfigHttp():
         """
         self.headers = getHeaders.GetHeaders.getHeaders()
 
+
+    def set_params(self, param):
+        """
+        set params
+        :param param:
+        :return:
+        """
+        self.params = param
 
     def set_data(self, data):
         """
@@ -46,9 +58,15 @@ class ConfigHttp():
         :return:
         """
         try:
-            response = requests.get(self.url, headers=self.headers,data=self.data)
-            # response.raise_for_status()
-            return response
+            response = requests.get(self.url, headers=self.headers, params=self.params ,data=self.data)
+            if response.status_code == 200:
+                return response
+            elif response.status_code == 401:
+                getHeaders.GetHeaders.refreshTokens()
+                response = requests.get(self.url, headers=self.headers, params=self.params ,data=self.data)
+                return response
+            else:
+                return response
         except TimeoutError:
             self.logger.error("Time out!")
             return None
@@ -62,9 +80,15 @@ class ConfigHttp():
         :return:
         """
         try:
-            response = requests.post(self.url, headers=self.headers, data=self.data)
-            # response.raise_for_status()
-            return response
+            response = requests.post(self.url, headers=self.headers, params=self.params, data=self.data)
+            if response.status_code == 200:
+                return response
+            elif response.status_code == 401:
+                getHeaders.GetHeaders.refreshTokens()
+                response = requests.post(self.url, headers=self.headers, params=self.params, data=self.data)
+                return response
+            else:
+                return response
         except TimeoutError:
             self.logger.error("Time out!")
             return None

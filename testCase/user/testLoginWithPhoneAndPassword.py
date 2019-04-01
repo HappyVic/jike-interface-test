@@ -16,9 +16,9 @@ class TestLoginWithPhoneAndPassword(unittest.TestCase):
         self.case_name = str(case_name)
         self.method = str(method)
         self.password = str(password)
-        self.return_json = None
         self.areaCode = str(areaCode)
         self.mobilePhoneNumber = str(mobilePhoneNumber)
+        self.response = None
 
     def setUp(self):
         """
@@ -34,10 +34,10 @@ class TestLoginWithPhoneAndPassword(unittest.TestCase):
         """
         # set url
         self.url = commontest.get_url_from_xml('loginWithPhoneAndPassword')
-
         configHttp.set_url(self.url)
         print("第一步：设置url  "+self.url)
 
+        #set headers
         configHttp.set_headers()
         print("第二步：设置headers" )
 

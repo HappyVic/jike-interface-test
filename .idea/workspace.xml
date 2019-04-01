@@ -2,7 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d89ad9b5-8668-42b3-b989-cdd95c800c68" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/testCase/user/testRecommendFeedList.py" beforeDir="false" afterPath="$PROJECT_DIR$/testCase/user/testRecommendFeedList.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testCase/user/testUsersProfile.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/caselist.txt" beforeDir="false" afterPath="$PROJECT_DIR$/caselist.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/configHttp.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/configHttp.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.ini" beforeDir="false" afterPath="$PROJECT_DIR$/config.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testCase/user/testLoginWithPhoneAndPassword.py" beforeDir="false" afterPath="$PROJECT_DIR$/testCase/user/testLoginWithPhoneAndPassword.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testFile/case/userCase.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/testFile/case/userCase.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testFile/interfaceURL.xml" beforeDir="false" afterPath="$PROJECT_DIR$/testFile/interfaceURL.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/token.txt" beforeDir="false" afterPath="$PROJECT_DIR$/token.txt" afterDir="false" />
     </list>
     <ignored path="interfaceTest.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,6 +33,7 @@
     <SUITE FILE_PATH="coverage/interfaceTest$runAll.coverage" NAME="runAll Coverage Results" MODIFIED="1553069641024" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/jikeInterface$Unittests_in_testLoginWithPhoneAndPassword_py.coverage" NAME="Unittests in testLoginWithPhoneAndPassword.py Coverage Results" MODIFIED="1554090898664" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testCase/user" />
     <SUITE FILE_PATH="coverage/jikeInterface$test3__1_.coverage" NAME="test3 (1) Coverage Results" MODIFIED="1553873542099" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
+    <SUITE FILE_PATH="coverage/jike_interface_test$Unittests_in_testGetSmsCode_py.coverage" NAME="Unittests in testGetSmsCode.py Coverage Results" MODIFIED="1554122395332" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testCase/user" />
     <SUITE FILE_PATH="coverage/jikeInterface$nameEmail.coverage" NAME="nameEmail Coverage Results" MODIFIED="1553495398192" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/common" />
     <SUITE FILE_PATH="coverage/jikeInterface$test.coverage" NAME="test Coverage Results" MODIFIED="1553853553507" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/jikeInterface$runAll.coverage" NAME="runAll Coverage Results" MODIFIED="1553858287277" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -39,17 +48,20 @@
     <SUITE FILE_PATH="coverage/jikeInterface$businessCommon.coverage" NAME="businessCommon Coverage Results" MODIFIED="1553155365451" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/common" />
     <SUITE FILE_PATH="coverage/jikeInterface$testEmail.coverage" NAME="testEmail Coverage Results" MODIFIED="1553246167604" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/common" />
     <SUITE FILE_PATH="coverage/interfaceTest$demo5.coverage" NAME="demo5 Coverage Results" MODIFIED="1483412505121" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testCase" />
-    <SUITE FILE_PATH="coverage/jike_interface_test$runAll.coverage" NAME="runAll Coverage Results" MODIFIED="1554110762211" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/jike_interface_test$runAll.coverage" NAME="runAll Coverage Results" MODIFIED="1554122461208" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/interfaceTest$Unittests_in_Login.coverage" NAME="Unittests in Login Coverage Results" MODIFIED="1481694799746" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testCase" />
     <SUITE FILE_PATH="coverage/jikeInterface$Unittests_in_getHeaders_py.coverage" NAME="Unittests in getHeaders.py Coverage Results" MODIFIED="1553590004379" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/common" />
     <SUITE FILE_PATH="coverage/jikeInterface$readConfig.coverage" NAME="readConfig Coverage Results" MODIFIED="1553165835012" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/jikeInterface$configHttp.coverage" NAME="configHttp Coverage Results" MODIFIED="1553149104540" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/common" />
+    <SUITE FILE_PATH="coverage/jike_interface_test$commontest.coverage" NAME="commontest Coverage Results" MODIFIED="1554118837831" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/common" />
+    <SUITE FILE_PATH="coverage/jike_interface_test$Unittests_in_testUsersProfile_py.coverage" NAME="Unittests in testUsersProfile.py Coverage Results" MODIFIED="1554122402763" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testCase/user" />
     <SUITE FILE_PATH="coverage/jikeInterface$Log.coverage" NAME="Log Coverage Results" MODIFIED="1553601105584" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/common" />
     <SUITE FILE_PATH="coverage/jikeInterface$test2.coverage" NAME="test2 Coverage Results" MODIFIED="1553873064848" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/interfaceTest$Unittests_in_demo3.coverage" NAME="Unittests in demo3 Coverage Results" MODIFIED="1482917720102" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testCase" />
     <SUITE FILE_PATH="coverage/interfaceTest$Unittest_GetAddressList_testGetAddressList.coverage" NAME="Unittest GetAddressList.testGetAddressList Coverage Results" MODIFIED="1487061141507" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testCase/user" />
     <SUITE FILE_PATH="coverage/jikeInterface$HTMLTestRunner.coverage" NAME="HTMLTestRunner Coverage Results" MODIFIED="1553486409718" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/common" />
     <SUITE FILE_PATH="coverage/jikeInterface$Unittests_in_testRecommendFeedList_py.coverage" NAME="Unittests in testRecommendFeedList.py Coverage Results" MODIFIED="1554090836721" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testCase/user" />
+    <SUITE FILE_PATH="coverage/jike_interface_test$Unittests_in_testLoginWithPhoneAndPassword_py.coverage" NAME="Unittests in testLoginWithPhoneAndPassword.py Coverage Results" MODIFIED="1554122376014" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testCase/user" />
     <SUITE FILE_PATH="coverage/jikeInterface$globalHeaders.coverage" NAME="globalHeaders Coverage Results" MODIFIED="1553853626426" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test" />
     <SUITE FILE_PATH="coverage/jikeInterface$HTMLT.coverage" NAME="HTMLT Coverage Results" MODIFIED="1553480497705" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/common" />
     <SUITE FILE_PATH="coverage/interfaceTest$readConfig.coverage" NAME="readConfig Coverage Results" MODIFIED="1553067655889" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -66,24 +78,12 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/common/configEmail.py">
+        <entry file="file://$PROJECT_DIR$/common/configHttp.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="952">
-              <caret line="56" column="11" selection-start-line="56" selection-start-column="11" selection-end-line="56" selection-end-column="11" />
+            <state relative-caret-position="277">
+              <caret line="68" column="31" selection-start-line="68" selection-start-column="31" selection-end-line="68" selection-end-column="31" />
               <folding>
-                <element signature="e#16#25#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/common/jikeToken.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" selection-start-line="20" selection-end-line="20" />
-              <folding>
-                <element signature="e#41#50#0" expanded="true" />
+                <element signature="e#0#15#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -92,8 +92,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config.ini">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="16" lean-forward="true" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
+            <state relative-caret-position="272">
+              <caret line="16" column="14" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -101,8 +101,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/testCase/user/testGetSmsCode.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="471">
-              <caret line="31" column="38" lean-forward="true" selection-start-line="15" selection-start-column="4" selection-end-line="31" selection-end-column="38" />
+            <state relative-caret-position="663">
+              <caret line="39" selection-start-line="39" selection-end-line="40" />
               <folding>
                 <element signature="e#41#52#0" expanded="true" />
               </folding>
@@ -111,10 +111,34 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/testCase/user/testUsersProfile.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1309">
+              <caret line="77" column="60" selection-start-line="77" selection-start-column="60" selection-end-line="77" selection-end-column="60" />
+              <folding>
+                <element signature="e#41#52#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/testCase/user/testRegisterUsers.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="493">
+              <caret line="29" column="11" lean-forward="true" selection-start-line="29" selection-start-column="11" selection-end-line="29" selection-end-column="11" />
+              <folding>
+                <element signature="e#106#121#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/testCase/user/testLoginWithPhoneAndPassword.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="55" lean-forward="true" selection-start-line="20" selection-start-column="55" selection-end-line="20" selection-end-column="55" />
+            <state relative-caret-position="386">
+              <caret line="50" column="21" selection-start-line="50" selection-start-column="13" selection-end-line="50" selection-end-column="21" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -122,11 +146,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/testCase/user/testRecommendFeedList.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
+            <state relative-caret-position="459">
+              <caret line="35" column="28" selection-start-line="35" selection-start-column="28" selection-end-line="35" selection-end-column="28" />
               <folding>
                 <element signature="e#43#58#0" expanded="true" />
               </folding>
@@ -135,12 +159,12 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/runAll.py">
+        <entry file="file://$PROJECT_DIR$/common/commontest.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="31" column="36" selection-start-line="31" selection-start-column="30" selection-end-line="31" selection-end-column="36" />
+            <state relative-caret-position="411">
+              <caret line="76" column="30" selection-start-line="76" selection-start-column="4" selection-end-line="76" selection-end-column="30" />
               <folding>
-                <element signature="e#0#9#0" expanded="true" />
+                <element signature="e#0#15#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -201,7 +225,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/testCase/user/testUploadImg.py" />
         <option value="$PROJECT_DIR$/testCase/user/testGetAddress.py" />
         <option value="$PROJECT_DIR$/testCase/product/testGetProductInfo.py" />
         <option value="$PROJECT_DIR$/testCase/user/testAddAddress.py" />
@@ -214,11 +237,9 @@
         <option value="D:/workprogram/Python/Python35/Lib/HTMLTestRunner.py" />
         <option value="$PROJECT_DIR$/testCase/demo3.py" />
         <option value="$PROJECT_DIR$/common/common.py" />
-        <option value="$PROJECT_DIR$/caselist.txt" />
         <option value="$PROJECT_DIR$/readConfig.py" />
         <option value="$PROJECT_DIR$/common/email.py" />
         <option value="$PROJECT_DIR$/common/testEmail.py" />
-        <option value="$PROJECT_DIR$/config.ini" />
         <option value="$PROJECT_DIR$/common/HTMLT.py" />
         <option value="$PROJECT_DIR$/getpathInfo.py" />
         <option value="$PROJECT_DIR$/common/HTMLTestRunner.py" />
@@ -230,7 +251,6 @@
         <option value="$PROJECT_DIR$/testCase/user/test2.py" />
         <option value="$PROJECT_DIR$/testCase/user/TestGetSmsCod.py" />
         <option value="$PROJECT_DIR$/testCase/user/testSms.py" />
-        <option value="$PROJECT_DIR$/common/commontest.py" />
         <option value="$PROJECT_DIR$/testCase/user/__init__.py" />
         <option value="$PROJECT_DIR$/test/__init__.py" />
         <option value="$PROJECT_DIR$/test/test_123.py" />
@@ -246,12 +266,16 @@
         <option value="$PROJECT_DIR$/common/jikeToken.py" />
         <option value="$PROJECT_DIR$/testCase/user/testRegisterUsers.py" />
         <option value="$PROJECT_DIR$/common/getHeaders.py" />
-        <option value="$PROJECT_DIR$/common/configHttp.py" />
         <option value="$PROJECT_DIR$/testCase/user/testGetSmsCode.py" />
-        <option value="$PROJECT_DIR$/testCase/user/testLoginWithPhoneAndPassword.py" />
         <option value="$PROJECT_DIR$/test/test1.py" />
         <option value="$PROJECT_DIR$/common/configEmail.py" />
         <option value="$PROJECT_DIR$/testCase/user/testRecommendFeedList.py" />
+        <option value="$PROJECT_DIR$/config.ini" />
+        <option value="$PROJECT_DIR$/testCase/user/testLoginWithPhoneAndPassword.py" />
+        <option value="$PROJECT_DIR$/common/commontest.py" />
+        <option value="$PROJECT_DIR$/testCase/user/testUsersProfile.py" />
+        <option value="$PROJECT_DIR$/caselist.txt" />
+        <option value="$PROJECT_DIR$/common/configHttp.py" />
       </list>
     </option>
   </component>
@@ -393,7 +417,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="getHeaders" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="commontest" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="interfaceTest" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -406,7 +430,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/common/getHeaders.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/common/commontest.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -512,7 +536,7 @@
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests in testRecommendFeedList.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="Unittests in testUsersProfile.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="interfaceTest" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -523,7 +547,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/testCase/user/testRecommendFeedList.py&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/testCase/user/testUsersProfile.py&quot;" />
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
@@ -543,20 +567,20 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.getHeaders" />
       <item itemvalue="Python.runAll" />
       <item itemvalue="Python tests.Unittests in /Users/vic/PycharmProjects/jikeInterface/testCase/user/run.py" />
       <item itemvalue="Python tests.Unittests in testGetSmsCode.py" />
       <item itemvalue="Python tests.Unittests in testLoginWithPhoneAndPassword.py" />
-      <item itemvalue="Python tests.Unittests in testRecommendFeedList.py" />
+      <item itemvalue="Python.commontest" />
+      <item itemvalue="Python tests.Unittests in testUsersProfile.py" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.runAll" />
-        <item itemvalue="Python tests.Unittests in testLoginWithPhoneAndPassword.py" />
+        <item itemvalue="Python tests.Unittests in testUsersProfile.py" />
         <item itemvalue="Python tests.Unittests in testGetSmsCode.py" />
-        <item itemvalue="Python tests.Unittests in testRecommendFeedList.py" />
-        <item itemvalue="Python.getHeaders" />
+        <item itemvalue="Python tests.Unittests in testLoginWithPhoneAndPassword.py" />
+        <item itemvalue="Python.commontest" />
       </list>
     </recent_temporary>
   </component>
@@ -602,39 +626,39 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittests_in_testRecommendFeedList_py - 2019.03.30 at 00h 13m 39s.xml">
-      <configuration name="Unittests in testRecommendFeedList.py" configurationId="tests" />
+    <history-entry file="Unittests_in_testUsersProfile_py - 2019.04.01 at 20h 23m 26s.xml">
+      <configuration name="Unittests in testUsersProfile.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_testRecommendFeedList_py - 2019.03.30 at 00h 15m 02s.xml">
-      <configuration name="Unittests in testRecommendFeedList.py" configurationId="tests" />
+    <history-entry file="Unittests_in_testUsersProfile_py - 2019.04.01 at 20h 23m 46s.xml">
+      <configuration name="Unittests in testUsersProfile.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_testRecommendFeedList_py - 2019.03.30 at 00h 15m 10s.xml">
-      <configuration name="Unittests in testRecommendFeedList.py" configurationId="tests" />
+    <history-entry file="Unittests_in_testUsersProfile_py - 2019.04.01 at 20h 26m 12s.xml">
+      <configuration name="Unittests in testUsersProfile.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_testRecommendFeedList_py - 2019.03.30 at 00h 16m 19s.xml">
-      <configuration name="Unittests in testRecommendFeedList.py" configurationId="tests" />
+    <history-entry file="Unittests_in_testUsersProfile_py - 2019.04.01 at 20h 27m 37s.xml">
+      <configuration name="Unittests in testUsersProfile.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_testRecommendFeedList_py - 2019.03.30 at 00h 16m 34s.xml">
-      <configuration name="Unittests in testRecommendFeedList.py" configurationId="tests" />
+    <history-entry file="Unittests_in_testUsersProfile_py - 2019.04.01 at 20h 33m 40s.xml">
+      <configuration name="Unittests in testUsersProfile.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_testRecommendFeedList_py - 2019.03.30 at 00h 17m 41s.xml">
-      <configuration name="Unittests in testRecommendFeedList.py" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_in_testRecommendFeedList_py - 2019.03.30 at 00h 17m 52s.xml">
-      <configuration name="Unittests in testRecommendFeedList.py" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_in_testRecommendFeedList_py - 2019.04.01 at 11h 54m 00s.xml">
-      <configuration name="Unittests in testRecommendFeedList.py" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_in_testGetSmsCode_py - 2019.04.01 at 11h 54m 51s.xml">
+    <history-entry file="Unittests_in_testGetSmsCode_py - 2019.04.01 at 20h 35m 03s.xml">
       <configuration name="Unittests in testGetSmsCode.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_testLoginWithPhoneAndPassword_py - 2019.04.01 at 11h 55m 10s.xml">
+    <history-entry file="Unittests_in_testLoginWithPhoneAndPassword_py - 2019.04.01 at 20h 35m 22s.xml">
       <configuration name="Unittests in testLoginWithPhoneAndPassword.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_testLoginWithPhoneAndPassword_py - 2019.04.01 at 20h 39m 48s.xml">
+      <configuration name="Unittests in testLoginWithPhoneAndPassword.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_testGetSmsCode_py - 2019.04.01 at 20h 39m 58s.xml">
+      <configuration name="Unittests in testGetSmsCode.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_testUsersProfile_py - 2019.04.01 at 20h 40m 07s.xml">
+      <configuration name="Unittests in testUsersProfile.py" configurationId="tests" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="174861000" />
+    <option name="totallyTimeSpent" value="184016000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -646,19 +670,19 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1901" y="35" width="1485" height="950" extended-state="0" />
+    <frame x="1821" y="23" width="1485" height="950" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" sideWeight="0.5063063" side_tool="true" weight="0.27148998" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.49369368" visible="true" weight="0.25641027" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.49369368" visible="true" weight="0.25987527" />
       <window_info id="Structure" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Event Log" order="0" sideWeight="0.5003465" side_tool="true" weight="0.32867134" />
       <window_info anchor="bottom" id="Python Console" order="1" weight="0.32867134" />
       <window_info anchor="bottom" id="Version Control" order="2" weight="0.32983682" />
       <window_info anchor="bottom" id="Message" order="3" />
       <window_info anchor="bottom" id="Find" order="4" weight="0.32750583" />
-      <window_info active="true" anchor="bottom" id="Run" order="5" weight="0.35314685" />
-      <window_info anchor="bottom" id="Debug" order="6" weight="0.28037384" />
+      <window_info anchor="bottom" id="Run" order="5" visible="true" weight="0.35314685" />
+      <window_info anchor="bottom" id="Debug" order="6" weight="0.27972028" />
       <window_info anchor="bottom" id="Cvs" order="7" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="8" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="9" weight="0.32867134" />
@@ -674,22 +698,22 @@
     </layout>
     <layout-to-restore>
       <window_info id="Favorites" order="0" sideWeight="0.5063063" side_tool="true" weight="0.27148998" />
-      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.49369368" visible="true" weight="0.21690921" />
+      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.49369368" visible="true" weight="0.25987527" />
       <window_info id="Structure" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Event Log" order="0" side_tool="true" />
-      <window_info anchor="bottom" id="Python Console" order="1" weight="0.32952926" />
-      <window_info anchor="bottom" id="Version Control" order="2" />
-      <window_info anchor="bottom" id="Terminal" order="3" weight="0.32952926" />
-      <window_info anchor="bottom" id="Message" order="4" />
-      <window_info anchor="bottom" id="Find" order="5" weight="0.32796317" />
-      <window_info active="true" anchor="bottom" id="Run" order="6" visible="true" weight="0.24626006" />
-      <window_info anchor="bottom" id="Debug" order="7" weight="0.28193325" />
-      <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="10" weight="0.32952926" />
-      <window_info active="true" anchor="bottom" id="Concurrent Activities Diagram" order="11" visible="true" weight="0.32967034" />
-      <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" order="13" />
+      <window_info anchor="bottom" id="Event Log" order="0" sideWeight="0.5003465" side_tool="true" weight="0.32867134" />
+      <window_info anchor="bottom" id="Python Console" order="1" weight="0.32867134" />
+      <window_info anchor="bottom" id="Version Control" order="2" weight="0.32983682" />
+      <window_info anchor="bottom" id="Message" order="3" />
+      <window_info anchor="bottom" id="Find" order="4" weight="0.32750583" />
+      <window_info active="true" anchor="bottom" id="Run" order="5" visible="true" weight="0.35314685" />
+      <window_info anchor="bottom" id="Debug" order="6" weight="0.27972028" />
+      <window_info anchor="bottom" id="Cvs" order="7" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="8" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="9" weight="0.32867134" />
+      <window_info active="true" anchor="bottom" id="Concurrent Activities Diagram" order="10" visible="true" weight="0.32967034" />
+      <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="12" />
+      <window_info anchor="bottom" id="Terminal" order="13" sideWeight="0.4996535" weight="0.32867134" />
       <window_info anchor="right" id="Database" order="0" />
       <window_info anchor="right" id="Commander" order="1" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
@@ -809,22 +833,10 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/testCase/user/testGetSmsCod.py" />
-    <entry file="file://$PROJECT_DIR$/common/commontest.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="170" column="23" selection-start-line="170" selection-start-column="23" selection-end-line="170" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/testCase/user/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/test/__init__.py" />
     <entry file="file://$PROJECT_DIR$/test/testHeaders.py" />
     <entry file="file:///Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/configparser.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -843,38 +855,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/caselist.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="9" selection-start-column="9" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/test2.py" />
     <entry file="file://$PROJECT_DIR$/common/getHeadersLogin.py" />
-    <entry file="file://$PROJECT_DIR$/testCase/user/testSms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="523">
-          <caret line="40" column="21" selection-start-line="40" selection-start-column="21" selection-end-line="40" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/testCase/user/testLogout.py" />
     <entry file="file://$PROJECT_DIR$/test/globalHeaders.py" />
     <entry file="file://$PROJECT_DIR$/common/Log.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="3" selection-start-line="3" selection-end-line="3" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testCase/user/testRegisterUsers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="49" column="38" selection-start-line="49" selection-start-column="38" selection-end-line="49" selection-end-column="38" />
-          <folding>
-            <element signature="e#106#121#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -909,16 +897,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/common/configHttp.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../Library/Caches/PyCharm2018.3/python_stubs/-1199943126/builtins.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
@@ -926,26 +904,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/test1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
-          <folding>
-            <element signature="e#1#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/testEmail.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="93" column="39" selection-start-line="93" selection-start-column="39" selection-end-line="93" selection-end-column="39" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/test/test1.py" />
+    <entry file="file://$PROJECT_DIR$/test/testEmail.py" />
     <entry file="file://$PROJECT_DIR$/common/configEmail.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="952">
@@ -978,15 +938,59 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config.ini">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="16" lean-forward="true" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
+        <state relative-caret-position="272">
+          <caret line="16" column="14" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testCase/user/testSms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="27" column="11" selection-end-line="52" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/commontest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="411">
+          <caret line="76" column="30" selection-start-line="76" selection-start-column="4" selection-end-line="76" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/caselist.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="17" lean-forward="true" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testCase/user/testRecommendFeedList.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="35" column="28" selection-start-line="35" selection-start-column="28" selection-end-line="35" selection-end-column="28" />
+          <folding>
+            <element signature="e#43#58#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/common/configHttp.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="277">
+          <caret line="68" column="31" selection-start-line="68" selection-start-column="31" selection-end-line="68" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/testCase/user/testLoginWithPhoneAndPassword.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="55" lean-forward="true" selection-start-line="20" selection-start-column="55" selection-end-line="20" selection-end-column="55" />
+        <state relative-caret-position="386">
+          <caret line="50" column="21" selection-start-line="50" selection-start-column="13" selection-end-line="50" selection-end-column="21" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
@@ -995,20 +999,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/testCase/user/testGetSmsCode.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="471">
-          <caret line="31" column="38" lean-forward="true" selection-start-line="15" selection-start-column="4" selection-end-line="31" selection-end-column="38" />
+        <state relative-caret-position="663">
+          <caret line="39" selection-start-line="39" selection-end-line="40" />
           <folding>
             <element signature="e#41#52#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testCase/user/testRecommendFeedList.py">
+    <entry file="file://$PROJECT_DIR$/testCase/user/testUsersProfile.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
+        <state relative-caret-position="1309">
+          <caret line="77" column="60" selection-start-line="77" selection-start-column="60" selection-end-line="77" selection-end-column="60" />
           <folding>
-            <element signature="e#43#58#0" expanded="true" />
+            <element signature="e#41#52#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testCase/user/testRegisterUsers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="29" column="11" lean-forward="true" selection-start-line="29" selection-start-column="11" selection-end-line="29" selection-end-column="11" />
+          <folding>
+            <element signature="e#106#121#0" expanded="true" />
           </folding>
         </state>
       </provider>

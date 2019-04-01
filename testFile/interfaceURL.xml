@@ -1,17 +1,31 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<interface>
+<userInterface>
     <url name="loginWithPhoneAndPassword">
         <group>/1.0/users/loginWithPhoneAndPassword/</group>
-<!--        <action>loginWithPhoneAndPassword</action>-->
     </url>
+    
     <url name="getSmsCode">
         <group>/1.0/users/getSmsCode</group>
     </url>
-
-
-    <url name="updatePassword">
-        <group>User</group>
+    
+    <url name="usersProfile">
+        <group>/1.0/users/profile</group>
+    </url>
+    
+    <url name="personalUpdate">
+        <group>/1.0/personalUpdate/single</group>
     </url>
 
+    <url name="getAvatarStatus">
+        <group>/1.0/avatars/getAvatarStatus</group>
+    </url>
 
-</interface>
+    <url name="usersRegister">
+        <group>/1.0/users/register</group>
+    </url>
+    
+    <url name="recommendFeedList">
+        <group>/1.0/recommendFeed/list/</group>
+    </url>
+</userInterface>
+

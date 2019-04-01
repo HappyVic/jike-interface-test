@@ -1,4 +1,6 @@
 user/testLoginWithPhoneAndPassword
+user/testGetSmsCode
+user/testUsersProfile
 #user/testRegister
 #user/testRegisterQuick
 #user/testGenerate
