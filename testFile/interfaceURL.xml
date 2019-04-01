@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<interface>
+    <url name="loginWithPhoneAndPassword">
+        <group>/1.0/users/loginWithPhoneAndPassword/</group>
+<!--        <action>loginWithPhoneAndPassword</action>-->
+    </url>
+    <url name="getSmsCode">
+        <group>/1.0/users/getSmsCode</group>
+    </url>
+
+
+    <url name="updatePassword">
+        <group>User</group>
+    </url>
+
+
+</interface>
