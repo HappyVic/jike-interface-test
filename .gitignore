@@ -107,3 +107,6 @@ result/
 .git/
 .git/
 __pycache__/
+common/__pycache__/
+testCase/__pycache__/
+token.txt
