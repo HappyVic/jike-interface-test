@@ -58,7 +58,7 @@ class Email():
         write the content of email
         :return:
         """
-        self.config_file_html()
+        self.config_file_html_img()
         self.config_file()
 
     def config_file_html_img(self):
@@ -67,7 +67,7 @@ class Email():
             msgtext = MIMEText(fp.read(), 'html', 'utf-8')  # 创建Text对象，包括文本内容
         self.msg.attach(msgtext)  # 构建HTML格式的邮件内容
 
-        image2_path = os.path.join(readConfig.path, 'testFile', 'img', 'logo.jpg')  # 图片路径
+        image2_path = os.path.join(readConfig.path, 'testFile', 'img', 'smile.jpg')  # 图片路径
         self.msg.attach(self.addimg(image2_path, '<image2>'))  # 构建HTML格式的邮件内容
 
 
