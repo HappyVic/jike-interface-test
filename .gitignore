@@ -105,3 +105,5 @@ venv.bak/
 .idea/
 result/
 .git/
+.git/
+__pycache__/
