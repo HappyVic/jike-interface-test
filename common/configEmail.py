@@ -62,7 +62,7 @@ class Email():
         self.config_file()
 
     def config_file_html_img(self):
-        file_path = os.path.join(readConfig.path, 'testFile', 'emailStyle.txt')  # 文件路径
+        file_path = os.path.join(readConfig.path, 'testFile', 'emailStyle.html')  # 文件路径
         with open(file_path, 'rb') as fp:  # 读取文件内容
             msgtext = MIMEText(fp.read(), 'html', 'utf-8')  # 创建Text对象，包括文本内容
         self.msg.attach(msgtext)  # 构建HTML格式的邮件内容

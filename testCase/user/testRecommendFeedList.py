@@ -10,9 +10,18 @@ import time
 
 
 class RecommendFeedList(unittest.TestCase):
+
+
+
+
+
     def test_post_recommendFeed_list(self):
-        # recommendFeed/list
-        # POST https://app-beta.jike.ruguoapp.com/1.0/recommendFeed/list
+        """
+        recommendFeed/list
+        POST https://app-beta.jike.ruguoapp.com/1.0/recommendFeed/list
+        :return:
+        """
+
         try:
             response = requests.post(
                 url="https://app.jike.ruguoapp.com/1.0/recommendFeed/list",
