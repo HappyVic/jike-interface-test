@@ -62,18 +62,18 @@ class Email():
         self.config_file()
 
     def config_file_html_img(self):
-        file_path = os.path.join(readConfig.path, 'testFile', 'emailStyle.html')  # 文件路径
+        file_path = os.path.join(readConfig.ProDir, 'testFile', 'emailStyle.html')  # 文件路径
         with open(file_path, 'rb') as fp:  # 读取文件内容
             msgtext = MIMEText(fp.read(), 'html', 'utf-8')  # 创建Text对象，包括文本内容
         self.msg.attach(msgtext)  # 构建HTML格式的邮件内容
 
-        image2_path = os.path.join(readConfig.path, 'testFile', 'img', 'smile.jpg')  # 图片路径
+        image2_path = os.path.join(readConfig.ProDir, 'testFile', 'img', 'smile.jpg')  # 图片路径
         self.msg.attach(self.addimg(image2_path, '<image2>'))  # 构建HTML格式的邮件内容
 
 
     def config_file_html(self):
-        reportpath = os.path.join(self.log.get_result_path(),'report.html')
-        with open(reportpath, encoding='utf-8') as f:  # 打开html报告
+        report_file_path = log.get_report_file_path()
+        with open(report_file_path, encoding='utf-8') as f:  # 打开html报告
             email_body = f.read()  # 读取报告内容
         self.msg = MIMEMultipart()  # 混合MIME格式
         self.msg.attach(MIMEText(email_body, 'html', 'utf-8'))
@@ -81,9 +81,9 @@ class Email():
     def config_file(self):
 
         if self.check_file():
-            reportpath = self.log.get_result_path()
-            filename = [os.path.join(reportpath, 'output.log'),
-                        os.path.join(reportpath, 'report.html')]
+            report_folder_path = self.log.get_result_folder_path()
+            filename = [os.path.join(report_folder_path, 'output.log'),
+                        os.path.join(report_folder_path, 'report.html')]
             for tmp in filename:
                 with open(tmp, 'rb') as f:
                     attachfiles = MIMEApplication(f.read())
@@ -106,7 +106,7 @@ class Email():
         check test report
         :return:
         """
-        reportpath = self.log.get_report_path()
+        reportpath = self.log.get_report_file_path()
         if os.path.isfile(reportpath) and not os.stat(reportpath) == 0:
             return True
         else:

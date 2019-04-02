@@ -13,20 +13,23 @@ class Log:
         global logPath, resultPath, path
         path = readConfig.ProDir
         resultPath = os.path.join(path, "result")
+
         if not os.path.exists(resultPath):#判断该文件是否存在
             os.mkdir(resultPath)#创建目录
+
         logPath = os.path.join(resultPath, str(datetime.now().strftime("%Y%m%d%H%M%S")))
         if not os.path.exists(logPath):
             os.mkdir(logPath)
+
         self.logger = logging.getLogger()#获得一个logger对象，默认是root
         self.logger.setLevel(logging.INFO)#设定INFO级别，所有等级大于等于INFO的信息都会输出
-        #logger.setLevel(lel): 指定最低的日志级别，低于lel的级别将被忽略。debug是最低的内置级别，critical为最高
 
-        # defined handler
+        # 定义handler
         handler = logging.FileHandler(os.path.join(logPath, "output.log"))#向文件output.log输出日志信息
-        # defined formatter
+        # 定义格式
         formatter = logging.Formatter('%(asctime)s] %(levelname)s [%(funcName)s: %(filename)s, %(lineno)d] %(message)s')#定义日志输出格式
         handler.setFormatter(formatter)#选择一个格式
+
         self.logger.addHandler(handler)#增加指定的handler
 
     def get_logger(self):
@@ -50,7 +53,7 @@ class Log:
         """
         self.logger.info("--------" + case_no + " END--------")
 
-    def build_case_line(self, case_name, code, msg):#用例
+    def build_case_line(self, case_name, code):#用例
         """
         write test case line
         :param case_name:
@@ -58,17 +61,17 @@ class Log:
         :param msg:
         :return:
         """
-        self.logger.info(case_name+" - Code:"+code+" - msg:"+msg)
+        self.logger.info(case_name+" - Code:"+code)
 
-    def get_report_path(self):#获取报告路径
+    def get_report_file_path(self):#获取报告路径
         """
         get report file path
         :return:
         """
-        report_path = os.path.join(logPath, "report.html")#报告路径
-        return report_path
+        report_file_path = os.path.join(logPath, "report.html")#报告路径
+        return report_file_path
 
-    def get_result_path(self):
+    def get_result_folder_path(self):
         """
         get test result path
         :return:
@@ -81,8 +84,8 @@ class Log:
         :param result:
         :return:
         """
-        result_path = os.path.join(logPath, "output.log")
-        fb = open(result_path, "wb")
+        logs_file_path = os.path.join(logPath, "output.log")
+        fb = open(logs_file_path, "wb")
         try:
             fb.write(result)
         except FileNotFoundError as ex:

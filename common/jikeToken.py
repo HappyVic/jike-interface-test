@@ -1,9 +1,10 @@
 # -*- coding:utf-8 -*-
 #!/usr/bin/python
 import os
+import readConfig
 
 
-path = os.path.split(os.path.realpath(__file__))[0] #该文件的绝对路径
+path = readConfig.ProDir #该文件的绝对路径
 token_path = os.path.join(path, 'token.txt')
 
 class JikeToken():

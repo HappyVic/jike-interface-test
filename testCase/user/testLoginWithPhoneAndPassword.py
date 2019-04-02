@@ -4,6 +4,7 @@ import time
 import paramunittest
 from common import commontest
 from common import configHttp as ConfigHttp
+from common import jikeToken
 
 login_xls = commontest.get_xls_case("userCase.xlsx", "login")
 configHttp = ConfigHttp.ConfigHttp()
@@ -11,13 +12,16 @@ configHttp = ConfigHttp.ConfigHttp()
 
 @paramunittest.parametrized(*login_xls)
 class TestLoginWithPhoneAndPassword(unittest.TestCase):
-    def setParameters(self, case_name, method, mobilePhoneNumber, password, areaCode,):
+    def setParameters(self, case_name, method, mobilePhoneNumber, password, areaCode, result ,msg ,code):
 
         self.case_name = str(case_name)
         self.method = str(method)
+        self.mobilePhoneNumber = str(mobilePhoneNumber)
         self.password = str(password)
         self.areaCode = str(areaCode)
-        self.mobilePhoneNumber = str(mobilePhoneNumber)
+        self.result = str(result)
+        self.msg = str(msg)
+        self.code = int(code)
         self.response = None
 
     def setUp(self):
@@ -52,10 +56,8 @@ class TestLoginWithPhoneAndPassword(unittest.TestCase):
         print("第四步：发送请求\n\t\t请求方法：")
 
 
-
+        self.checkResult()
         print("第五步：检查结果")
-        print('Response HTTP Status Code:', self.response.status_code)
-        print('Response HTTP Response Body:', self.response.json())
         #print('Response HTTP Response Body:', json.dumps(self.response.json(), indent=2, sort_keys=True, ensure_ascii=False))
         # indent: 缩进空格数，indent = 0输出为一行
         # sork_keys = True: 将json结果的key按ascii码排序
@@ -63,7 +65,35 @@ class TestLoginWithPhoneAndPassword(unittest.TestCase):
 
     def tearDown(self):
         time.sleep(2)
+        if self.response.status_code == 200:
+            token = {
+                "x-jike-access-token": self.response.headers.get('x-jike-access-token'),
+                "x-jike-refresh-token": self.response.headers.get('x-jike-refresh-token')
+            }
+            jikeToken.JikeToken().saveToken(token)
+        else:
+            pass
+
         print("测试结束，输出log完结\n\n")
+
+
+    def checkResult(self):
+        """
+        check test result
+        :return:
+        """
+        self.info = self.response.json()
+        # show return message
+        commontest.show_return_msg(self.response)
+
+        if self.result == '1':
+            self.assertEqual(self.response.status_code, self.code)
+            self.assertEqual(self.info['user']['screenName'], self.msg)
+
+        if self.result == '0':
+            self.assertEqual(self.response.status_code, self.code)
+            self.assertEqual(self.info['error'], self.msg)
+
 
 
 if __name__ == "__main__":
