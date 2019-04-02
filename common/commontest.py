@@ -1,6 +1,5 @@
 import requests
 import readConfig
-import getpathInfo
 import os
 from xlrd import open_workbook
 from xml.etree import ElementTree as ET
@@ -9,34 +8,13 @@ from common.Log import MyLog as Log
 import json
 
 localReadConfig = readConfig.ReadConfig()
-path = getpathInfo.get_Path()
+testFilePath = os.path.join(readConfig.ProDir,'testFile')
 localConfigHttp = configHttp.ConfigHttp()
 log = Log.get_log()
 logger = log.get_logger()
 
 caseNo = 0
 
-
-def get_visitor_token():
-    """
-    create a token for visitor
-    :return:
-    """
-    host = localReadConfig.get_http("BASEURL")
-    response = requests.get(host+"/v2/User/Token/generate")
-    info = response.json()
-    token = info.get("info")
-    logger.debug("Create token:%s" % (token))
-    return token
-
-
-def set_visitor_token_to_config():
-    """
-    set token that created for visitor to config
-    :return:
-    """
-    token_v = get_visitor_token()
-    localReadConfig.set_headers("TOKEN_V", token_v)
 
 
 def get_value_from_return_json(json, name1, name2):
@@ -47,8 +25,7 @@ def get_value_from_return_json(json, name1, name2):
     :param name2:
     :return:
     """
-    info = json['info']
-    group = info[name1]
+    group = json[name1]
     value = group[name2]
     return value
 
@@ -73,29 +50,14 @@ def show_return_msg(response):
 # ****************************** read testCase excel ********************************
 
 
-
-def get_value_from_return_json(json, name1, name2):
-    """
-    get value by key
-    :param json:
-    :param name1:
-    :param name2:
-    :return:
-    """
-    group = json[name1]
-    value = group[name2]
-    return value
-
-
-
-def get_xls(xls_name, sheet_name):
+def get_xls_case(xls_name, sheet_name):
     """
     get interface data from xls file
     :return:
     """
     cls = []
     # 获取用例文件路径
-    xlsPath = os.path.join(path, "testFile", 'case', xls_name)
+    xlsPath = os.path.join(testFilePath, 'case', xls_name)
     # 打开用例Excel
     file = open_workbook(xlsPath)
     # 获得打开Excel的sheet
@@ -162,7 +124,7 @@ def get_sql(database_name, table_name, sql_id):
 
 
 def get_url_from_xml(name):
-    url_path = os.path.join(path, 'testFile', 'interfaceURL.xml')  # xml文件路径
+    url_path = os.path.join(testFilePath, 'interfaceURL.xml')  # xml文件路径
     tree = ET.parse(url_path)  # 将XMl文件加载并返回一个ELementTree对象
 
     for u in tree.findall('url'): #查询host节点

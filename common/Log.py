@@ -1,5 +1,4 @@
 import os
-import getpathInfo
 import readConfig as readConfig
 import logging
 from datetime import datetime
@@ -12,7 +11,7 @@ class Log:
     logging.basicConfig()
     def __init__(self):
         global logPath, resultPath, path
-        path = getpathInfo.get_Path()
+        path = readConfig.ProDir
         resultPath = os.path.join(path, "result")
         if not os.path.exists(resultPath):#判断该文件是否存在
             os.mkdir(resultPath)#创建目录

@@ -1,11 +1,13 @@
 import os
 import codecs
 import configparser
-import getpathInfo
 
 
-path = getpathInfo.get_Path()#调用实例化，还记得这个类返回的路径为C:\Users\songlihui\PycharmProjects\dkxinterfaceTest
-configPath = os.path.join(path, "config.ini")
+ProDir = os.path.split(os.path.realpath(__file__))[0] # 该文件的绝对路径
+
+configPath = os.path.join(ProDir, "config.ini")
+
+
 
 
 class ReadConfig():
@@ -23,7 +25,6 @@ class ReadConfig():
 
         self.cf = configparser.ConfigParser()
         self.cf.read(configPath)
-
 
 
     def get_email(self, name):

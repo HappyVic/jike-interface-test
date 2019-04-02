@@ -5,7 +5,7 @@ from common.Log import MyLog
 import readConfig as readConfig
 from common import configHttp as configHttp
 
-productInfo_xls = commontest.get_xls("productCase.xlsx", "getProductInfo")
+productInfo_xls = commontest.get_xls_case("productCase.xlsx", "getProductInfo")
 localReadConfig = readConfig.ReadConfig()
 localConfigHttp = configHttp.ConfigHttp()
 

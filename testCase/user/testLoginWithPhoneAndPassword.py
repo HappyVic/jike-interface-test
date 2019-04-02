@@ -5,7 +5,7 @@ import paramunittest
 from common import commontest
 from common import configHttp as ConfigHttp
 
-login_xls = commontest.get_xls("userCase.xlsx", "login")
+login_xls = commontest.get_xls_case("userCase.xlsx", "login")
 configHttp = ConfigHttp.ConfigHttp()
 
 

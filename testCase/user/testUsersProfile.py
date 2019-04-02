@@ -8,7 +8,7 @@ from common import Log as Log
 from common import commontest
 from common import configHttp as ConfigHttp
 
-smscode_xls = commontest.get_xls("userCase.xlsx", "usersprofile")
+smscode_xls = commontest.get_xls_case("userCase.xlsx", "usersprofile")
 configHttp = ConfigHttp.ConfigHttp()
 
 

@@ -14,6 +14,8 @@ from common import jikeToken
 
 class RegisterUsers(unittest.TestCase):
 
+
+
     def test_gen_password(self):
         """
         生成16位随机密码
