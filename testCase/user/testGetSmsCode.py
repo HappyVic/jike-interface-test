@@ -6,6 +6,7 @@ import time
 import paramunittest
 from common import commontest
 from common import configHttp as ConfigHttp
+from common.Log import MyLog
 
 smscode_xls = commontest.get_xls_case("userCase.xlsx", "smscode")
 configHttp = ConfigHttp.ConfigHttp()
@@ -29,6 +30,8 @@ class TestGetSmsCode(unittest.TestCase):
 
         :return:
         """
+        self.log = MyLog.get_log()
+        self.logger = self.log.get_logger()
         print("开始测试用例"+self.case_name)
 
     def testSmsCode(self):
@@ -57,8 +60,9 @@ class TestGetSmsCode(unittest.TestCase):
         print("第四步：发送请求\t\t请求方法："+self.method)
 
 
-        print("第五步：检查结果")
         self.checkResult()
+        print("第五步：检查结果")
+
         #print('Response HTTP Response Body:', json.dumps(self.response.json(), indent=2, sort_keys=True, ensure_ascii=False))
         # indent: 缩进空格数，indent = 0输出为一行
         # sork_keys = True: 将json结果的key按ascii码排序
@@ -66,6 +70,7 @@ class TestGetSmsCode(unittest.TestCase):
 
     def tearDown(self):
         time.sleep(2)
+        self.log.build_case_line(self.case_name, str(self.response))
         print("测试结束，输出log完结\n\n")
 
 

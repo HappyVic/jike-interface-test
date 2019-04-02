@@ -126,7 +126,6 @@ class Email():
             smtp.login(user, password)
             smtp.sendmail(sender, receivers, self.msg.as_string())
             self.logger.info("测试报告已通过电子邮件发送给开发人员")
-            print("邮件发送成功")
         except Exception as ex:
             self.logger.error(str(ex))
             return "邮件发送失败"

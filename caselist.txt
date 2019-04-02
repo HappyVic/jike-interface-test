@@ -1,4 +1,4 @@
-user/testRegisterUsers
+user/testUsersRegister
 user/testGetSmsCode
 user/testUsersProfile
 #user/testLoginWithPhoneAndPassword

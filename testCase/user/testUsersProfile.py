@@ -3,11 +3,11 @@
 import time
 import unittest
 import paramunittest
-from common import Log as Log
+from common.Log import MyLog
 from common import commontest
 from common import configHttp as ConfigHttp
 
-smscode_xls = commontest.get_xls_case("userCase.xlsx", "usersprofile")
+smscode_xls = commontest.get_xls_case("userCase.xlsx", "usersProfile")
 configHttp = ConfigHttp.ConfigHttp()
 
 
@@ -28,7 +28,7 @@ class TestUsersProfile(unittest.TestCase):
 
         :return:
         """
-        self.log = Log.MyLog.get_log()
+        self.log = MyLog.get_log()
         self.logger = self.log.get_logger()
 
     def testUsersProfile(self):
@@ -56,6 +56,7 @@ class TestUsersProfile(unittest.TestCase):
 
     def tearDown(self):
         time.sleep(2)
+        self.log.build_case_line(self.case_name, str(self.response))
         print("测试结束，输出log完结\n\n")
 
 

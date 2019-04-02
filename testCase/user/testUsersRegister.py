@@ -10,18 +10,18 @@ import uuid
 from random import choice
 import string
 from common import jikeToken
-from common import Log as Log
+from common.Log import MyLog
 from common import commontest
 from common import configHttp
 import paramunittest
 from common import configHttp as ConfigHttp
 
 
-smscode_xls = commontest.get_xls_case("userCase.xlsx", "registerusers")
+smscode_xls = commontest.get_xls_case("userCase.xlsx", "usersRegister")
 configHttp = ConfigHttp.ConfigHttp()
 
 @paramunittest.parametrized(*smscode_xls)
-class RegisterUsers(unittest.TestCase):
+class TestUsersRegister(unittest.TestCase):
     def setParameters(self, case_name, method,result):
 
         self.case_name = str(case_name)
@@ -35,7 +35,7 @@ class RegisterUsers(unittest.TestCase):
 
         :return:
         """
-        self.log = Log.MyLog.get_log()
+        self.log = MyLog.get_log()
         self.logger = self.log.get_logger()
 
     def random_password(self):
@@ -49,7 +49,7 @@ class RegisterUsers(unittest.TestCase):
         return paw
 
 
-    def testRegisterUsers(self):
+    def testUsersRegister(self):
         """
         test body
         :return:
@@ -85,6 +85,8 @@ class RegisterUsers(unittest.TestCase):
             jikeToken.JikeToken().saveToken(token)
         else:
             pass
+
+        self.log.build_case_line(self.case_name, str(self.response))
         print("测试结束，输出log完结\n\n")
 
 

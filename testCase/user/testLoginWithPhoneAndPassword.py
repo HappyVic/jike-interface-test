@@ -5,6 +5,7 @@ import paramunittest
 from common import commontest
 from common import configHttp as ConfigHttp
 from common import jikeToken
+from common.Log import MyLog
 
 login_xls = commontest.get_xls_case("userCase.xlsx", "login")
 configHttp = ConfigHttp.ConfigHttp()
@@ -29,6 +30,8 @@ class TestLoginWithPhoneAndPassword(unittest.TestCase):
 
         :return:
         """
+        self.log = MyLog.get_log()
+        self.logger = self.log.get_logger()
         print("开始测试用例"+self.case_name)
 
     def testLogin(self):
@@ -74,6 +77,7 @@ class TestLoginWithPhoneAndPassword(unittest.TestCase):
         else:
             pass
 
+        self.log.build_case_line(self.case_name, str(self.response))
         print("测试结束，输出log完结\n\n")
 
 

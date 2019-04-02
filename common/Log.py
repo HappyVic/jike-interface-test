@@ -10,9 +10,10 @@ localReadConfig = readConfig.ReadConfig()
 class Log:
     logging.basicConfig()
     def __init__(self):
-        global logPath, resultPath, path
+        global logPath, resultPath, path, logger_name
         path = readConfig.ProDir
         resultPath = os.path.join(path, "result")
+        logger_name = 'logs'
 
         if not os.path.exists(resultPath):#判断该文件是否存在
             os.mkdir(resultPath)#创建目录
@@ -21,13 +22,13 @@ class Log:
         if not os.path.exists(logPath):
             os.mkdir(logPath)
 
-        self.logger = logging.getLogger()#获得一个logger对象，默认是root
+        self.logger = logging.getLogger(logger_name)#获得一个logger对象，默认是root
         self.logger.setLevel(logging.INFO)#设定INFO级别，所有等级大于等于INFO的信息都会输出
 
         # 定义handler
         handler = logging.FileHandler(os.path.join(logPath, "output.log"))#向文件output.log输出日志信息
         # 定义格式
-        formatter = logging.Formatter('%(asctime)s] %(levelname)s [%(funcName)s: %(filename)s, %(lineno)d] %(message)s')#定义日志输出格式
+        formatter = logging.Formatter('[%(asctime)s]  <%(levelname)s>  %(message)s')#定义日志输出格式('%(asctime)s] %(levelname)s [%(funcName)s: %(filename)s, %(lineno)d] %(message)s')
         handler.setFormatter(formatter)#选择一个格式
 
         self.logger.addHandler(handler)#增加指定的handler
@@ -61,7 +62,7 @@ class Log:
         :param msg:
         :return:
         """
-        self.logger.info(case_name+" - Code:"+code)
+        self.logger.info("case_name:"+case_name+" -- Code:"+code)
 
     def get_report_file_path(self):#获取报告路径
         """
