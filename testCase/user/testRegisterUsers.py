@@ -47,7 +47,7 @@ class RegisterUsers(unittest.TestCase):
                 "x-jike-access-token":response.headers.get('x-jike-access-token'),
                 "x-jike-refresh-token":response.headers.get('x-jike-refresh-token')
             }
-            jikeToken.saveToken(token)
+            jikeToken.JikeToken().saveToken(token)
         except requests.exceptions.RequestException:
             print('HTTP1 Request failed')
 
