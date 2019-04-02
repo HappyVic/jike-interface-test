@@ -34,6 +34,14 @@ class ConfigHttp():
         """
         self.headers = getHeaders.GetHeaders.getHeaders()
 
+    def set_loca_headers(self):
+        """
+        set headers
+        :param header:
+        :return:
+        """
+        self.headers = getHeaders.GetHeaders.localHeaders()
+
 
     def set_params(self, param):
         """

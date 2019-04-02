@@ -1,6 +1,8 @@
-user/testLoginWithPhoneAndPassword
+
 user/testGetSmsCode
 user/testUsersProfile
+#user/testLoginWithPhoneAndPassword
+
 #user/testRegister
 #user/testRegisterQuick
 #user/testGenerate

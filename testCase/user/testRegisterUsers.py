@@ -3,20 +3,42 @@
 # Install the Python Requests library:
 # `pip install requests`
 
-import requests
 import json
 import unittest
-from common import getHeaders
+import time
 import uuid
 from random import choice
 import string
 from common import jikeToken
+from common import Log as Log
+from common import commontest
+from common import configHttp
+import paramunittest
+from common import configHttp as ConfigHttp
 
+
+smscode_xls = commontest.get_xls_case("userCase.xlsx", "registerusers")
+configHttp = ConfigHttp.ConfigHttp()
+
+@paramunittest.parametrized(*smscode_xls)
 class RegisterUsers(unittest.TestCase):
+    def setParameters(self, case_name, method,result):
+
+        self.case_name = str(case_name)
+        self.method = str(method)
+        self.response = None
+        self.result = str(result)
 
 
+    def setUp(self):
+        """
 
-    def test_gen_password(self):
+        :return:
+        """
+        self.log = Log.MyLog.get_log()
+        self.logger = self.log.get_logger()
+
+    def random_password(self):
         """
         生成16位随机密码
         :return: 返回密码
@@ -27,31 +49,58 @@ class RegisterUsers(unittest.TestCase):
         return paw
 
 
+    def testRegisterUsers(self):
+        """
+        test body
+        :return:
+        """
+        # set url
+        self.url = commontest.get_url_from_xml('usersRegister')
+        configHttp.set_url(self.url)
 
-    def test_register_users(self):
-        """
-        post https://app.jike.ruguoapp.com/1.0/users/register
-        :return:refresh_token
-        """
-        try:
-            response = requests.post(
-                url="https://app-beta.jike.ruguoapp.com/1.0/users/register",
-                headers=getHeaders.GetHeaders.localHeaders(),
-                data=json.dumps({
+        # set headers
+        configHttp.set_loca_headers()
+
+        # set params
+        data = json.dumps({
                     "username": str(uuid.uuid4()).upper(),
-                    "password": RegisterUsers().test_gen_password()
-
+                    "password": self.random_password()
                 })
-            )
+        configHttp.set_data(data)
+
+        # test interface
+        self.response = configHttp.post()
+
+        # check result
+        self.checkResult()
 
 
-            token={
-                "x-jike-access-token":response.headers.get('x-jike-access-token'),
-                "x-jike-refresh-token":response.headers.get('x-jike-refresh-token')
+    def tearDown(self):
+        time.sleep(2)
+        if self.response.status_code == 200:
+            token = {
+                "x-jike-access-token": self.response.headers.get('x-jike-access-token'),
+                "x-jike-refresh-token": self.response.headers.get('x-jike-refresh-token')
             }
             jikeToken.JikeToken().saveToken(token)
-        except requests.exceptions.RequestException:
-            print('HTTP1 Request failed')
+        else:
+            pass
+        print("测试结束，输出log完结\n\n")
+
+
+    def checkResult(self):
+        """
+        检查测试结果
+        :return:
+        """
+        self.info = self.response.json()#返回json数据
+        commontest.show_return_msg(self.response)#显示返回消息
+
+
+        if self.result == '1':
+            self.assertEqual(self.response.status_code,200)
+
+
 
 
 if __name__ == '__main__':

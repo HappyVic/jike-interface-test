@@ -1,6 +1,5 @@
 # -*- coding:utf-8 -*-
 #!/usr/bin/python
-import json
 import time
 import unittest
 import paramunittest
