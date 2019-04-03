@@ -15,7 +15,7 @@ def refresh_tokens():
             url="https://app.jike.ruguoapp.com/1.0/app_auth_tokens.refresh",
             headers={
                 "x-jike-device-id": "4DA0BE6A-69D6-4C3B-BCD3-A77310872F36",
-                "x-jike-refresh-token": jikeToken.getToken().get('x-jike-refresh-token')
+                "x-jike-refresh-token": jikeToken.get_token().get('x-jike-refresh-token')
             },
         )
 
@@ -23,7 +23,7 @@ def refresh_tokens():
             "x-jike-access-token": response.headers.get('x-jike-access-token'),
             "x-jike-refresh-token": response.headers.get('x-jike-refresh-token')
         }
-        jikeToken.saveToken(token)
+        jikeToken.save_token(token)
 
     except requests.exceptions.RequestException:
         print('HTTP Request failed')
@@ -35,7 +35,7 @@ def get_headers():
     :return:headers
     """
     access_token={
-        "x-jike-access-token": jikeToken.getToken().get('x-jike-access-token')
+        "x-jike-access-token": jikeToken.get_token().get('x-jike-access-token')
     }
     headers = local_headers()
     headers.update(access_token)
@@ -86,7 +86,7 @@ def get_refresh_token():
             "x-jike-access-token": response.headers.get('x-jike-access-token'),
             "x-jike-refresh-token": response.headers.get('x-jike-refresh-token')
         }
-        jikeToken.saveToken(token)
+        jikeToken.save_token(token)
 
     except requests.exceptions.RequestException:
         print('HTTP Request failed')

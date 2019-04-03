@@ -82,7 +82,7 @@ class TestUsersRegister(unittest.TestCase):
                 "x-jike-access-token": self.response.headers.get('x-jike-access-token'),
                 "x-jike-refresh-token": self.response.headers.get('x-jike-refresh-token')
             }
-            jikeToken.saveToken(token)
+            jikeToken.save_token(token)
         else:
             pass
 
