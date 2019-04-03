@@ -32,7 +32,7 @@ class ConfigHttp():
         :param header:
         :return:
         """
-        self.headers = getHeaders.GetHeaders.getHeaders()
+        self.headers = getHeaders.get_headers()
 
     def set_loca_headers(self):
         """
@@ -40,7 +40,7 @@ class ConfigHttp():
         :param header:
         :return:
         """
-        self.headers = getHeaders.GetHeaders.localHeaders()
+        self.headers = getHeaders.local_headers()
 
 
     def set_params(self, param):
@@ -70,7 +70,7 @@ class ConfigHttp():
             if response.status_code == 200:
                 return response
             elif response.status_code == 401:
-                getHeaders.GetHeaders.refreshTokens()
+                refresh_tokens()
                 response = requests.get(self.url, headers=self.headers, params=self.params ,data=self.data)
                 return response
             else:
@@ -92,7 +92,7 @@ class ConfigHttp():
             if response.status_code == 200:
                 return response
             elif response.status_code == 401:
-                getHeaders.GetHeaders.refreshTokens()
+                refresh_tokens()
                 response = requests.post(self.url, headers=self.headers, params=self.params, data=self.data)
                 return response
             else:

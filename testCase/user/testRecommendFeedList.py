@@ -25,17 +25,17 @@ class RecommendFeedList(unittest.TestCase):
         try:
             response = requests.post(
                 url="https://app.jike.ruguoapp.com/1.0/recommendFeed/list",
-                headers=getHeaders.GetHeaders.getHeaders(),
+                headers=getHeaders.get_headers(),
                 data=json.dumps({
                     "limit": 10,
                     "trigger": "user"
                 })
             )
             if response.status_code== 401:
-                getHeaders.GetHeaders.refreshTokens()
+                refresh_tokens()
                 response= requests.post(
                     url="https://app.jike.ruguoapp.com/1.0/recommendFeed/list",
-                    headers=getHeaders.GetHeaders.getHeaders(),
+                    headers=getHeaders.get_headers(),
                     data=json.dumps({
                         "limit": 10,
                         "trigger": "user"
