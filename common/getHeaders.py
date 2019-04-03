@@ -46,9 +46,9 @@ def get_headers():
 def local_headers():
     """
     本地Headers
-    :return:local_headers
+    :return:Headers
     """
-    local_headers = {
+    headers = {
         "OS": "ios",
         "OS-Version": "Version 12.1.4 (Build 16D57)",
         "App-Version": "5.7.0",
@@ -63,36 +63,32 @@ def local_headers():
         "User-Agent": "%E5%8D%B3%E5%88%BB/1341 CFNetwork/976 Darwin/18.2.0",
         "Content-Type": "application/json; charset=utf-8",
     }
-    return local_headers
+    return headers
 
 
-class GetHeaders:
+def get_refresh_token():
+    """
+    登录刷新token保存到本地
+    :return:
+    """
+    try:
+        response = requests.post(
+            url="https://app-beta.jike.ruguoapp.com/1.0/users/loginWithPhoneAndPassword",
+            headers=local_headers(),
+            data=json.dumps({
+                "mobilePhoneNumber": "16666666666",
+                "password": "111111",
+                "areaCode": "+86"
+            })
+        )
 
-    def getRefreshToken(self):
-        """
-        登录刷新token保存到本地
-        :return:
-        """
-        try:
-            response = requests.post(
-                url="https://app-beta.jike.ruguoapp.com/1.0/users/loginWithPhoneAndPassword",
-                headers=local_headers(),
-                data=json.dumps({
-                    "mobilePhoneNumber": "16666666666",
-                    "password": "111111",
-                    "areaCode": "+86"
-                })
-            )
+        token = {
+            "x-jike-access-token": response.headers.get('x-jike-access-token'),
+            "x-jike-refresh-token": response.headers.get('x-jike-refresh-token')
+        }
+        jikeToken.saveToken(token)
 
-            token = {
-                "x-jike-access-token": response.headers.get('x-jike-access-token'),
-                "x-jike-refresh-token": response.headers.get('x-jike-refresh-token')
-            }
-            jikeToken.saveToken(token)
-
-        except requests.exceptions.RequestException:
-            print('HTTP Request failed')
+    except requests.exceptions.RequestException:
+        print('HTTP Request failed')
 
 
-if __name__ == '__main__':
-    get_headers()
