@@ -15,8 +15,7 @@ topics_roles_admin_submit = "/1.0/topics/roles/admin/submitApplication" #提交�
 
 #客户端主理人相关接口
 topics_getDetail = "/1.0/topics/getDetail"#主题详情页
-topics_listInvolvedUsers
-
+topics_listInvolvedUsers ="￿/1.0/topics/listInvolvedUsers￿"#rol
 
 #客户端动态详情页接口
 originalPosts_get = "/1.0/originalPosts/get?refTopicId=<topicId>" #主题详情页进入动态详情页

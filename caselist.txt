@@ -1,6 +1,7 @@
 user/testUsersRegister
 user/testGetSmsCode
 user/testUsersProfile
+topics/testTopicsGetDetail
 #user/testLoginWithPhoneAndPassword
 #user/testRegister
 #user/testRegisterQuick

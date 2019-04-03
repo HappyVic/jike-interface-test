@@ -51,12 +51,12 @@ def local_headers():
     headers = {
         "OS": "ios",
         "OS-Version": "Version 12.1.4 (Build 16D57)",
-        "App-Version": "5.7.0",
+        "App-Version": "5.8.0",
         "App-BuildNo": "1314",
         "Manufacturer": "Apple",
         "Model": "iPhone11,6",
         "BundleID": "com.ruguoapp.jike",
-        "x-jike-device-id": "4DA0BE6A-69D6-4C3B-BCD3-A77310872F36",
+        "x-jike-device-id": "20301BEB-4D1F-4F53-81A1-E187954819A5",
         "WifiConnected": "true",
         "King-Card-Status": "unknown",
         "Notification-Status": "OFF",
@@ -66,7 +66,7 @@ def local_headers():
     return headers
 
 
-def get_refresh_token():
+def login_refresh_token():
     """
     登录刷新token保存到本地
     :return:
@@ -76,7 +76,7 @@ def get_refresh_token():
             url="https://app-beta.jike.ruguoapp.com/1.0/users/loginWithPhoneAndPassword",
             headers=local_headers(),
             data=json.dumps({
-                "mobilePhoneNumber": "16666666666",
+                "mobilePhoneNumber": "00000000001",
                 "password": "111111",
                 "areaCode": "+86"
             })
