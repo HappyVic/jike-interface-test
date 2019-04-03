@@ -1,5 +1,6 @@
 # -*- coding:utf-8 -*-
 #!/usr/bin/python
+import json
 import unittest
 import time
 import paramunittest
@@ -7,23 +8,25 @@ from common.Log import MyLog
 from common import commontest
 from common import url
 from common import configHttp
+from common import jikeToken
 
 
-smscode_xls = commontest.get_xls_case("userCase.xlsx", "usersProfile")
+login_xls = commontest.get_xls_case("userCase.xlsx", "login")
 configHttp = configHttp.ConfigHttp()
 
 
-@paramunittest.parametrized(*smscode_xls)
-class TestUsersProfile(unittest.TestCase):
-    def setParameters(self, case_name, method, username, screenName , result):
+@paramunittest.parametrized(*login_xls)
+class TestCase(unittest.TestCase):
+    def setParameters(self, case_name, method, mobilePhoneNumber, areaCode, action, result, success):
 
         self.case_name = str(case_name)
         self.method = str(method)
-        self.response = None
-        self.username = str(username)
-        self.screenName = str(screenName)
+        self.mobilePhoneNumber = str(mobilePhoneNumber)
+        self.areaCode = str(areaCode)
+        self.action = str(action)
         self.result = str(result)
-
+        self.success = bool(success)
+        self.response = None
 
     def setUp(self):
         """
@@ -33,13 +36,12 @@ class TestUsersProfile(unittest.TestCase):
         self.log = MyLog.get_log()
         self.logger = self.log.get_logger()
 
-    def testUsersProfile(self):
+    def testCase(self):
         """
         test body
         :return:
         """
         # set url
-        # self.url = commontest.get_url_from_xml('usersProfile')
         self.url = url.users_profile
         configHttp.set_url(self.url)
 
@@ -49,6 +51,11 @@ class TestUsersProfile(unittest.TestCase):
         # set params
         params = {"username": self.username}
         configHttp.set_params(params)
+
+        # set date
+        data = json.dumps(
+            {"mobilePhoneNumber": self.mobilePhoneNumber, "password": self.password, "reaCode": self.areaCode})
+        configHttp.set_data(data)
 
         # test interface
         self.response = configHttp.get()
@@ -61,7 +68,6 @@ class TestUsersProfile(unittest.TestCase):
         time.sleep(1)
         self.log.build_case_line(self.case_name, str(self.response))
         print("测试结束，输出log完结\n\n")
-
 
     def checkResult(self):
         """
@@ -79,6 +85,8 @@ class TestUsersProfile(unittest.TestCase):
         if self.result == '0':
             self.assertIsNotNone(self.info['user']['screenName'])
             self.assertEqual(self.response.status_code, 200)
+
+
 
 
 if __name__ == "__main__":

@@ -4,12 +4,14 @@ import json
 import unittest
 import time
 import paramunittest
-from common import commontest
-from common import configHttp as ConfigHttp
 from common.Log import MyLog
+from common import commontest
+from common import url
+from common import configHttp
+
 
 smscode_xls = commontest.get_xls_case("userCase.xlsx", "smscode")
-configHttp = ConfigHttp.ConfigHttp()
+configHttp = configHttp.ConfigHttp()
 
 
 @paramunittest.parametrized(*smscode_xls)
@@ -40,7 +42,8 @@ class TestGetSmsCode(unittest.TestCase):
         :return:
         """
         # set url
-        self.url = commontest.get_url_from_xml('getSmsCode')
+        #self.url = commontest.get_url_from_xml('getSmsCode')
+        self.url = url.users_getSmsCode
 
         configHttp.set_url(self.url)
         print("第一步：设置url  "+self.url)
@@ -69,7 +72,7 @@ class TestGetSmsCode(unittest.TestCase):
         # ensure_ascii = Fasle: 不确保ascii码，如果返回格式为utf - 8包含中文，不转化为\u...
 
     def tearDown(self):
-        time.sleep(2)
+        time.sleep(1)
         self.log.build_case_line(self.case_name, str(self.response))
         print("测试结束，输出log完结\n\n")
 
@@ -94,4 +97,4 @@ class TestGetSmsCode(unittest.TestCase):
 
 
 if __name__ == "__main__":
-    run = TestGetSmsCode()
+    unittest.main()

@@ -2,13 +2,15 @@ import json
 import unittest
 import time
 import paramunittest
-from common import commontest
-from common import configHttp as ConfigHttp
-from common import jikeToken
 from common.Log import MyLog
+from common import commontest
+from common import url
+from common import configHttp
+from common import jikeToken
+
 
 login_xls = commontest.get_xls_case("userCase.xlsx", "login")
-configHttp = ConfigHttp.ConfigHttp()
+configHttp = configHttp.ConfigHttp()
 
 
 @paramunittest.parametrized(*login_xls)
@@ -40,7 +42,8 @@ class TestLoginWithPhoneAndPassword(unittest.TestCase):
         :return:
         """
         # set url
-        self.url = commontest.get_url_from_xml('loginWithPhoneAndPassword')
+        # self.url = commontest.get_url_from_xml('loginWithPhoneAndPassword')
+        self.url = url.users_loginWithPhoneAndPassword
         configHttp.set_url(self.url)
         print("第一步：设置url  "+self.url)
 
@@ -67,7 +70,7 @@ class TestLoginWithPhoneAndPassword(unittest.TestCase):
         # ensure_ascii = Fasle: 不确保ascii码，如果返回格式为utf - 8包含中文，不转化为\u...
 
     def tearDown(self):
-        time.sleep(2)
+        time.sleep(1)
         if self.response.status_code == 200:
             token = {
                 "x-jike-access-token": self.response.headers.get('x-jike-access-token'),
@@ -101,4 +104,4 @@ class TestLoginWithPhoneAndPassword(unittest.TestCase):
 
 
 if __name__ == "__main__":
-    run = TestLoginWithPhoneAndPassword().testLogin()
+    unittest.main()

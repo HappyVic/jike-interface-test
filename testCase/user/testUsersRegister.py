@@ -6,19 +6,19 @@
 import json
 import unittest
 import time
+import paramunittest
 import uuid
 from random import choice
 import string
-from common import jikeToken
 from common.Log import MyLog
 from common import commontest
+from common import url
 from common import configHttp
-import paramunittest
-from common import configHttp as ConfigHttp
+from common import jikeToken
 
 
 smscode_xls = commontest.get_xls_case("userCase.xlsx", "usersRegister")
-configHttp = ConfigHttp.ConfigHttp()
+configHttp = configHttp.ConfigHttp()
 
 @paramunittest.parametrized(*smscode_xls)
 class TestUsersRegister(unittest.TestCase):
@@ -55,7 +55,8 @@ class TestUsersRegister(unittest.TestCase):
         :return:
         """
         # set url
-        self.url = commontest.get_url_from_xml('usersRegister')
+        # self.url = commontest.get_url_from_xml('usersRegister')
+        self.url = url.users_register
         configHttp.set_url(self.url)
 
         # set headers
@@ -76,7 +77,7 @@ class TestUsersRegister(unittest.TestCase):
 
 
     def tearDown(self):
-        time.sleep(2)
+        time.sleep(1)
         if self.response.status_code == 200:
             token = {
                 "x-jike-access-token": self.response.headers.get('x-jike-access-token'),
