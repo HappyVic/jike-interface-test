@@ -16,7 +16,6 @@ from common import url
 from common import configHttp
 from common import jikeToken
 
-
 smscode_xls = commontest.get_xls_case("userCase.xlsx", "usersRegister")
 configHttp = configHttp.ConfigHttp()
 
@@ -83,7 +82,7 @@ class TestUsersRegister(unittest.TestCase):
                 "x-jike-access-token": self.response.headers.get('x-jike-access-token'),
                 "x-jike-refresh-token": self.response.headers.get('x-jike-refresh-token')
             }
-            jikeToken.JikeToken().saveToken(token)
+            jikeToken.saveToken(token)
         else:
             pass
 

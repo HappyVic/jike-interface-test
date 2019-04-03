@@ -4,6 +4,7 @@ import requests
 import json
 from common import jikeToken
 
+
 class GetHeaders():
 
     def localHeaders():
@@ -35,7 +36,7 @@ class GetHeaders():
         :return:headers
         """
         access_token={
-            "x-jike-access-token":jikeToken.JikeToken().getToken().get('x-jike-access-token')
+            "x-jike-access-token": jikeToken.getToken().get('x-jike-access-token')
         }
         headers = GetHeaders.localHeaders()
         headers.update(access_token)
@@ -54,7 +55,7 @@ class GetHeaders():
                 url="https://app.jike.ruguoapp.com/1.0/app_auth_tokens.refresh",
                 headers={
                     "x-jike-device-id": "4DA0BE6A-69D6-4C3B-BCD3-A77310872F36",
-                    "x-jike-refresh-token":jikeToken.JikeToken().getToken().get('x-jike-refresh-token')
+                    "x-jike-refresh-token": jikeToken.getToken().get('x-jike-refresh-token')
                 },
             )
 
@@ -62,7 +63,7 @@ class GetHeaders():
                 "x-jike-access-token": response.headers.get('x-jike-access-token'),
                 "x-jike-refresh-token": response.headers.get('x-jike-refresh-token')
             }
-            jikeToken.JikeToken().saveToken(token)
+            jikeToken.saveToken(token)
 
         except requests.exceptions.RequestException:
             print('HTTP Request failed')
@@ -88,7 +89,7 @@ class GetHeaders():
                 "x-jike-access-token": response.headers.get('x-jike-access-token'),
                 "x-jike-refresh-token": response.headers.get('x-jike-refresh-token')
             }
-            jikeToken.JikeToken().saveToken(token)
+            jikeToken.saveToken(token)
 
         except requests.exceptions.RequestException:
             print('HTTP Request failed')
