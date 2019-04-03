@@ -41,7 +41,6 @@ class TestLoginWithPhoneAndPassword(unittest.TestCase):
         :return:
         """
         # set url
-        # self.url = commontest.get_url_from_xml('loginWithPhoneAndPassword')
         self.url = url.users_loginWithPhoneAndPassword
         configHttp.set_url(self.url)
         print("第一步：设置url  "+self.url)

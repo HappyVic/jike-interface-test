@@ -54,7 +54,6 @@ class TestUsersRegister(unittest.TestCase):
         :return:
         """
         # set url
-        # self.url = commontest.get_url_from_xml('usersRegister')
         self.url = url.users_register
         configHttp.set_url(self.url)
 

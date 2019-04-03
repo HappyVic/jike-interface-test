@@ -42,7 +42,6 @@ class TestGetSmsCode(unittest.TestCase):
         :return:
         """
         # set url
-        #self.url = commontest.get_url_from_xml('getSmsCode')
         self.url = url.users_getSmsCode
 
         configHttp.set_url(self.url)
