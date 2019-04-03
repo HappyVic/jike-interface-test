@@ -11,13 +11,13 @@ from email.mime.image import MIMEImage
 from datetime import datetime
 import threading
 import readConfig as readConfig
-from common.Log import MyLog
+from common import Log
 
 
 localReadConfig = readConfig.ReadConfig()
 
 
-class Email():
+class Email:
     def __init__(self):
         global host, user, password, port, sender, title,receivers
 
@@ -29,17 +29,13 @@ class Email():
         user = localReadConfig.get_email("mail_user")# QQ邮件登录名称
         password = localReadConfig.get_email("mail_pass")# QQ邮箱的授权码
 
-
         title = localReadConfig.get_email("subject")#邮件主题
-        # content = localReadConfig.get_email("content")
-
-
 
         # 定义邮件主题
         date = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         self.subject = "接口测试报告" + " " + date
 
-        self.log = MyLog.get_log()
+        self.log = Log.MyLog.get_log()
         self.logger = self.log.get_logger()
 
         self.msg = MIMEMultipart('related')
@@ -64,15 +60,14 @@ class Email():
     def config_file_html_img(self):
         file_path = os.path.join(readConfig.ProDir, 'testFile', 'emailStyle.html')  # 文件路径
         with open(file_path, 'rb') as fp:  # 读取文件内容
-            msgtext = MIMEText(fp.read(), 'html', 'utf-8')  # 创建Text对象，包括文本内容
-        self.msg.attach(msgtext)  # 构建HTML格式的邮件内容
+            msg_text = MIMEText(fp.read(), 'html', 'utf-8')  # 创建Text对象，包括文本内容
+        self.msg.attach(msg_text)  # 构建HTML格式的邮件内容
 
         image2_path = os.path.join(readConfig.ProDir, 'testFile', 'img', 'smile.jpg')  # 图片路径
-        self.msg.attach(self.addimg(image2_path, '<image2>'))  # 构建HTML格式的邮件内容
-
+        self.msg.attach(self.add_image(image2_path, '<image2>'))  # 构建HTML格式的邮件内容
 
     def config_file_html(self):
-        report_file_path = log.get_report_file_path()
+        report_file_path = Log.Log().get_report_file_path()
         with open(report_file_path, encoding='utf-8') as f:  # 打开html报告
             email_body = f.read()  # 读取报告内容
         self.msg = MIMEMultipart()  # 混合MIME格式
@@ -86,39 +81,34 @@ class Email():
                         os.path.join(report_folder_path, 'report.html')]
             for tmp in filename:
                 with open(tmp, 'rb') as f:
-                    attachfiles = MIMEApplication(f.read())
-                    attachfiles.add_header('Content-Disposition', 'attachment', filename=tmp)
-                    self.msg.attach(attachfiles)
+                    attach_files = MIMEApplication(f.read())
+                    attach_files.add_header('Content-Disposition', 'attachment', filename=tmp)
+                    self.msg.attach(attach_files)
 
-
-    def addimg(self,src, imgid):
+    def add_image(self,src, img_id):
         # xml中添加图片
         with open(src, 'rb') as f:
-            msgimage = MIMEImage(f.read())  # 读取图片内容
-        msgimage.add_header('Content-ID', imgid)  # 指定文件的Content-ID,<img>,在HTML中图片src将用到
-        return msgimage
-
-
-
+            msg_image = MIMEImage(f.read())  # 读取图片内容
+        msg_image.add_header('Content-ID', img_id)  # 指定文件的Content-ID,<img>,在HTML中图片src将用到
+        return msg_image
 
     def check_file(self):
         """
         check test report
         :return:
         """
-        reportpath = self.log.get_report_file_path()
-        if os.path.isfile(reportpath) and not os.stat(reportpath) == 0:
+        report_path = self.log.get_report_file_path()
+        if os.path.isfile(report_path) and not os.stat(report_path) == 0:
             return True
         else:
             return False
-
-
 
     def send_email(self):
         """
         send email
         :return:
         """
+        global smtp
         self.config_content()
         self.config_header()
         try:
@@ -132,7 +122,7 @@ class Email():
         finally:
             smtp.quit()
 
-class MyEmail():
+class MyEmail:
     email = None
     mutex = threading.Lock()
 

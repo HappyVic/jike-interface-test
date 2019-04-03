@@ -1,8 +1,6 @@
-import requests
 import readConfig
 import os
 from xlrd import open_workbook
-from xml.etree import ElementTree as ET
 from common import configHttp
 from common.Log import MyLog as Log
 import json
@@ -16,16 +14,15 @@ logger = log.get_logger()
 caseNo = 0
 
 
-
-def get_value_from_return_json(json, name1, name2):
+def get_value_from_return_json(response_json, name1, name2):
     """
     get value by key
-    :param json:
+    :param response_json:
     :param name1:
     :param name2:
     :return:
     """
-    group = json[name1]
+    group = response_json[name1]
     value = group[name2]
     return value
 
@@ -45,8 +42,8 @@ def show_return_msg(response):
     # print('Response HTTP Response Body:', json.dumps(self.response.json(), indent=2, sort_keys=True, ensure_ascii=False))
 
     # indent: 缩进空格数，indent = 0输出为一行
-    # sork_keys = True: 将json结果的key按ascii码排序
-    # ensure_ascii = Fasle: 不确保ascii码，如果返回格式为utf - 8包含中文，不转化为\u...
+    # sort_keys = True: 将json结果的key按ascii码排序
+    # ensure_ascii = False: 不确保ascii码，如果返回格式为utf - 8包含中文，不转化为\u...
 # ****************************** read testCase excel ********************************
 
 
@@ -57,83 +54,15 @@ def get_xls_case(xls_name, sheet_name):
     """
     cls = []
     # 获取用例文件路径
-    xlsPath = os.path.join(testFilePath, 'case', xls_name)
+    xls_path = os.path.join(testFilePath, 'case', xls_name)
     # 打开用例Excel
-    file = open_workbook(xlsPath)
+    file = open_workbook(xls_path)
     # 获得打开Excel的sheet
     sheet = file.sheet_by_name(sheet_name)
     # 获取这个sheet内容行数
-    nrows = sheet.nrows
-    for i in range(nrows):#根据行数做循环
+    rows = sheet.nrows
+    for i in range(rows):#根据行数做循环
         if sheet.row_values(i)[0] != u'case_name':#如果这个Excel的这个sheet的第i行的第一列不等于case_name那么我们把这行的数据添加到cls[]
             cls.append(sheet.row_values(i))
     return cls
-
-# ****************************** read SQL xml ********************************
-database = {}
-
-
-def set_xml():
-    """
-    set sql xml
-    :return:
-    """
-    if len(database) == 0:
-        sql_path = os.path.join(proDir, "testFile", "SQL.xml")
-        tree = ElementTree.parse(sql_path)
-        for db in tree.findall("database"):
-            db_name = db.get("name")
-            # print(db_name)
-            table = {}
-            for tb in db.getchildren():
-                table_name = tb.get("name")
-                # print(table_name)
-                sql = {}
-                for data in tb.getchildren():
-                    sql_id = data.get("id")
-                    # print(sql_id)
-                    sql[sql_id] = data.text
-                table[table_name] = sql
-            database[db_name] = table
-
-
-def get_xml_dict(database_name, table_name):
-    """
-    get db dict by given name
-    :param database_name:
-    :param table_name:
-    :return:
-    """
-    set_xml()
-    database_dict = database.get(database_name).get(table_name)
-    return database_dict
-
-
-def get_sql(database_name, table_name, sql_id):
-    """
-    get sql by given name and sql_id
-    :param database_name:
-    :param table_name:
-    :param sql_id:
-    :return:
-    """
-    db = get_xml_dict(database_name, table_name)
-    sql = db.get(sql_id)
-    return sql
-# ****************************** read interfaceURL xml ********************************
-
-
-def get_url_from_xml(name):
-    url_path = os.path.join(testFilePath, 'interfaceURL.xml')  # xml文件路径
-    tree = ET.parse(url_path)  # 将XMl文件加载并返回一个ELementTree对象
-
-    for u in tree.findall('url'): #查询host节点
-        url_name = u.get('name')
-        if url_name == name:
-            for i in u:
-                return i.text
-
-if __name__ == "__main__":
-    print(get_url_from_xml('loginWithPhoneAndPassword'))
-
 
