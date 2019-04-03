@@ -15,7 +15,7 @@ class AllTest:
         logger = log.get_logger()
         resultPath = log.get_report_file_path()
         on_off = localReadConfig.get_email("on_off")
-        self.caseListFile = os.path.join(readConfig.ProDir, "caselist.txt")
+        self.caseListFile = os.path.join(readConfig.ProDir, "caseList.txt")
         self.caseFile = os.path.join(readConfig.ProDir, "testCase")
         self.caseList = []
         self.email = MyEmail.get_email()
@@ -43,7 +43,7 @@ class AllTest:
 
         for case in self.caseList:
             case_name = case.split("/")[-1]
-            print(case_name+".py")
+            print(case_name + ".py")
             discover = unittest.defaultTestLoader.discover(self.caseFile, pattern=case_name + '.py', top_level_dir=None)
             suite_module.append(discover)
 
@@ -88,6 +88,5 @@ class AllTest:
 
 
 if __name__ == '__main__':
-
     obj = AllTest()
     obj.run()

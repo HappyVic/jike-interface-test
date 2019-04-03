@@ -2,15 +2,11 @@ import os
 import codecs
 import configparser
 
-
-ProDir = os.path.split(os.path.realpath(__file__))[0] # 该文件的绝对路径
-
+ProDir = os.path.split(os.path.realpath(__file__))[0]  # 该文件的绝对路径
 configPath = os.path.join(ProDir, "config.ini")
 
 
-
-
-class ReadConfig():
+class ReadConfig:
     def __init__(self):
         fd = open(configPath)
         data = fd.read()
@@ -26,7 +22,6 @@ class ReadConfig():
         self.cf = configparser.ConfigParser()
         self.cf.read(configPath)
 
-
     def get_email(self, name):
         value = self.cf.get("EMAIL", name)
         return value
@@ -36,5 +31,5 @@ class ReadConfig():
         return value
 
 
-if __name__ == '__main__':#测试一下，我们读取配置文件的方法是否可用
-    print('HTTP中的baseurl值为：', ReadConfig().get_http('baseurl'))
+if __name__ == '__main__':  # 测试一下，我们读取配置文件的方法是否可用
+    print('HTTP中的base_url值为：', ReadConfig().get_http('base_url'))

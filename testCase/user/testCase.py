@@ -1,5 +1,5 @@
 # -*- coding:utf-8 -*-
-#!/usr/bin/python
+# !/usr/bin/python
 import json
 import unittest
 import time
@@ -9,7 +9,6 @@ from common import commontest
 from common import url
 from common import configHttp
 from common import jikeToken
-
 
 login_xls = commontest.get_xls_case("userCase.xlsx", "login")
 configHttp = configHttp.ConfigHttp()
@@ -63,7 +62,6 @@ class TestCase(unittest.TestCase):
         # check result
         self.checkResult()
 
-
     def tearDown(self):
         time.sleep(1)
         self.log.build_case_line(self.case_name, str(self.response))
@@ -74,19 +72,16 @@ class TestCase(unittest.TestCase):
         检查测试结果
         :return:
         """
-        self.info = self.response.json()#返回json数据
-        commontest.show_return_msg(self.response)#显示返回消息
-
+        self.info = self.response.json()  # 返回json数据
+        commontest.show_return_msg(self.response)  # 显示返回消息
 
         if self.result == '1':
             self.assertEqual(self.info['user']['screenName'], self.screenName)
-            self.assertEqual(self.response.status_code,200)
+            self.assertEqual(self.response.status_code, 200)
 
         if self.result == '0':
             self.assertIsNotNone(self.info['user']['screenName'])
             self.assertEqual(self.response.status_code, 200)
-
-
 
 
 if __name__ == "__main__":

@@ -59,7 +59,7 @@ class TestUsersRegister(unittest.TestCase):
         configHttp.set_url(self.url)
 
         # set headers
-        configHttp.set_loca_headers()
+        configHttp.set_local_headers()
 
         # set params
         data = json.dumps({

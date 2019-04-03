@@ -11,8 +11,7 @@ from email.mime.image import MIMEImage
 from datetime import datetime
 import threading
 import readConfig as readConfig
-from common import Log
-
+from common.Log import MyLog
 
 localReadConfig = readConfig.ReadConfig()
 
@@ -35,7 +34,7 @@ class Email:
         date = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         self.subject = "接口测试报告" + " " + date
 
-        self.log = Log.MyLog.get_log()
+        self.log = MyLog.get_log()
         self.logger = self.log.get_logger()
 
         self.msg = MIMEMultipart('related')
@@ -67,7 +66,7 @@ class Email:
         self.msg.attach(self.add_image(image2_path, '<image2>'))  # 构建HTML格式的邮件内容
 
     def config_file_html(self):
-        report_file_path = Log.Log().get_report_file_path()
+        report_file_path = self.log.get_report_file_path()
         with open(report_file_path, encoding='utf-8') as f:  # 打开html报告
             email_body = f.read()  # 读取报告内容
         self.msg = MIMEMultipart()  # 混合MIME格式
