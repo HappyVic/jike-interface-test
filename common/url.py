@@ -20,3 +20,7 @@ topics_listInvolvedUsers ="￿/1.0/topics/listInvolvedUsers￿"#rol
 #客户端动态详情页接口
 originalPosts_get = "/1.0/originalPosts/get?refTopicId=<topicId>" #主题详情页进入动态详情页
 comments_listPrimary = "/1.0/comments/listPrimary" #评论列表
+
+
+
+
