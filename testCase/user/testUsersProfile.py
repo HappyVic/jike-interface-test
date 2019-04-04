@@ -9,11 +9,11 @@ from common import url
 from common import configHttp
 
 
-smscode_xls = commontest.get_xls_case("userCase.xlsx", "usersProfile")
+usersProfile_xls = commontest.get_xls_case("userCase.xlsx", "usersProfile")
 configHttp = configHttp.ConfigHttp()
 
 
-@paramunittest.parametrized(*smscode_xls)
+@paramunittest.parametrized(*usersProfile_xls)
 class TestUsersProfile(unittest.TestCase):
     def setParameters(self, case_name, method, username, screenName , result):
 

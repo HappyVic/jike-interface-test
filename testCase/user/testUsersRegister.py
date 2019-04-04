@@ -16,10 +16,10 @@ from common import url
 from common import configHttp
 from common import jikeToken
 
-smscode_xls = commontest.get_xls_case("userCase.xlsx", "usersRegister")
+usersRegister_xls = commontest.get_xls_case("userCase.xlsx", "usersRegister")
 configHttp = configHttp.ConfigHttp()
 
-@paramunittest.parametrized(*smscode_xls)
+@paramunittest.parametrized(*usersRegister_xls)
 class TestUsersRegister(unittest.TestCase):
     def setParameters(self, case_name, method,result):
 
