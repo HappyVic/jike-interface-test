@@ -3,30 +3,9 @@
 import requests
 import json
 from common import jikeToken
-
-
-def refresh_tokens():
-    """
-    app_auth_tokens.refresh刷新token，保存到本地
-    :return:
-    """
-    try:
-        response = requests.post(
-            url="https://app.jike.ruguoapp.com/1.0/app_auth_tokens.refresh",
-            headers={
-                "x-jike-device-id": "4DA0BE6A-69D6-4C3B-BCD3-A77310872F36",
-                "x-jike-refresh-token": jikeToken.get_token().get('x-jike-refresh-token')
-            },
-        )
-
-        token = {
-            "x-jike-access-token": response.headers.get('x-jike-access-token'),
-            "x-jike-refresh-token": response.headers.get('x-jike-refresh-token')
-        }
-        jikeToken.save_token(token)
-
-    except requests.exceptions.RequestException:
-        print('HTTP Request failed')
+import uuid
+from random import choice
+import string
 
 
 def get_headers():
@@ -66,6 +45,39 @@ def local_headers():
     return headers
 
 
+def register_refresh_token():
+    """
+    注册刷新token保存到本地
+    :return: 
+    """
+    #生成16位随机密码
+    length = 16
+    chars = string.ascii_letters + string.digits
+    paw = ''.join([choice(chars) for i in range(length)])
+
+    data = json.dumps({
+                    "username": str(uuid.uuid4()).upper(),
+                    "password": paw
+                })
+
+    try:
+        response = requests.post(
+            url="https://app-beta.jike.ruguoapp.com/1.0/users/register",
+            headers=local_headers(),
+            data=data
+        )
+
+        token = {
+            "x-jike-access-token": response.headers.get('x-jike-access-token'),
+            "x-jike-refresh-token": response.headers.get('x-jike-refresh-token')
+        }
+        jikeToken.save_token(token)
+        return token
+
+    except requests.exceptions.RequestException:
+        print('HTTP Request failed')
+
+
 def login_refresh_token():
     """
     登录刷新token保存到本地
@@ -91,4 +103,27 @@ def login_refresh_token():
     except requests.exceptions.RequestException:
         print('HTTP Request failed')
 
+
+def refresh_tokens():
+    """
+    app_auth_tokens.refresh刷新token，保存到本地
+    :return:
+    """
+    try:
+        response = requests.post(
+            url="https://app.jike.ruguoapp.com/1.0/app_auth_tokens.refresh",
+            headers={
+                "x-jike-device-id": "4DA0BE6A-69D6-4C3B-BCD3-A77310872F36",
+                "x-jike-refresh-token": jikeToken.get_token().get('x-jike-refresh-token')
+            },
+        )
+
+        token = {
+            "x-jike-access-token": response.headers.get('x-jike-access-token'),
+            "x-jike-refresh-token": response.headers.get('x-jike-refresh-token')
+        }
+        jikeToken.save_token(token)
+
+    except requests.exceptions.RequestException:
+        print('HTTP Request failed')
 

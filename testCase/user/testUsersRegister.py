@@ -60,7 +60,7 @@ class TestUsersRegister(unittest.TestCase):
         # set headers
         configHttp.set_local_headers()
 
-        # set params
+        # set data
         data = json.dumps({
                     "username": str(uuid.uuid4()).upper(),
                     "password": self.random_password()
