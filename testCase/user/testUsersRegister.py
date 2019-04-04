@@ -44,7 +44,7 @@ class TestUsersRegister(unittest.TestCase):
         """
         length=16
         chars = string.ascii_letters + string.digits
-        paw=''.join([choice(chars) for i in range(length)])
+        paw=''.join([choice(chars) for _ in range(length)])
         return paw
 
 
