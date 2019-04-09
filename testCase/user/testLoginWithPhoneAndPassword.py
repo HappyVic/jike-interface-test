@@ -49,7 +49,7 @@ class TestLoginWithPhoneAndPassword(unittest.TestCase):
         configHttp.set_headers()
         print("第二步：设置headers" )
 
-        # set date
+        # set data
         data = json.dumps({"mobilePhoneNumber":self.mobilePhoneNumber, "password":self.password,"reaCode":self.areaCode})
         configHttp.set_data(data)
         print("第三步：设置发送请求的参数")

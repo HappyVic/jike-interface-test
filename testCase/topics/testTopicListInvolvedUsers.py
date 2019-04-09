@@ -10,18 +10,18 @@ from common import url
 from common import configHttp
 from common import getHeaders
 
-login_xls = commontest.get_xls_case("detailCase.xlsx", "getDetail")
+login_xls = commontest.get_xls_case("detailCase.xlsx", "listInvolvedUsers")
 configHttp = configHttp.ConfigHttp()
 
 
 @paramunittest.parametrized(*login_xls)
 class TopicsGetDetail(unittest.TestCase):
-    def setParameters(self, case_name, method, topics_id, ref, result, topics_roles_dict):
+    def setParameters(self, case_name, method, topics_id, limit, result, topics_roles_dict):
 
         self.case_name = str(case_name)
         self.method = str(method)
         self.topics_id = topics_id
-        self.ref = ref
+        self.limit = limit
         self.result = str(result)
         self.topics_roles_dict = eval(topics_roles_dict)
         self.response = None
@@ -40,19 +40,19 @@ class TopicsGetDetail(unittest.TestCase):
         :return:
         """
         # set url
-        self.url = url.topics_getDetail
+        self.url = url.topics_listInvolvedUsers
         configHttp.set_url(self.url)
 
         # set headers
         getHeaders.login_refresh_token()
         configHttp.set_headers()
 
-        # set params
-        params = {"id": self.topics_id, "ref": self.ref}
-        configHttp.set_params(params)
+        # set date
+        data = json.dumps({"topicId":self.topics_id, "limit":self.limit})
+        configHttp.set_data(data)
 
         # test interface
-        self.response = configHttp.get()
+        self.response = configHttp.post()
 
         # check result
         self.checkResult()
@@ -72,7 +72,7 @@ class TopicsGetDetail(unittest.TestCase):
 
         if self.result == "已开放申请&无主理人":
 
-            self.assertDictEqual (self.info['data']['involvedUsers']['bulletin'], self.topics_roles_dict)
+            self.assertDictEqual (self.info['data'][0], self.topics_roles_dict)
             self.assertEqual(self.response.status_code, 200)
             self.assertEqual(self.info['success'], True)
 
