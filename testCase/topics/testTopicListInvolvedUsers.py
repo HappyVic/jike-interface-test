@@ -72,9 +72,13 @@ class TopicsGetDetail(unittest.TestCase):
 
         if self.result == "已开放申请&无主理人":
 
-            self.assertDictEqual (self.info['data'][0], self.topics_roles_dict)
+            self.assertDictEqual(self.info['data'][0], self.topics_roles_dict)
             self.assertEqual(self.response.status_code, 200)
             self.assertEqual(self.info['success'], True)
+
+            dict1 = self.info['data'][0]
+            dict2 = self.topics_roles_dict
+            self.assertEqual(commontest.get_value_dict_keys(dict1), commontest.get_value_dict_keys(dict2))
 
         # if self.result == '0':
         #     self.assertIsNotNone(self.info['user']['screenName'])

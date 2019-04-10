@@ -26,6 +26,14 @@ def get_value_from_return_json(response_json, name1, name2):
     value = group[name2]
     return value
 
+def get_value_dict_keys(dict):
+    """
+    :param dict:
+    :return:
+    """
+    list = [i for i in dict]
+    return list
+
 
 def show_return_msg(response):
     """
